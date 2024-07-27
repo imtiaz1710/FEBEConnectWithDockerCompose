@@ -1,0 +1,46 @@
+# Angular-specific
+/dist/
+/tmp/
+.DS_Store
+node_modules
+npm-debug.log
+yarn-error.log
+.angular/cache
+.angular/cli.json
+.angular/ivy
+.angular/packages
+*.tsbuildinfo
+
+# .NET-specific
+/bin/
+/obj/
+*.dll
+*.pdb
+*.suo
+*.user
+*.sln.docstates
+*.tmp
+*.log
+*.vspscc
+*.vssscc
+.vs/
+[Dd]ebug/
+[Rr]elease/
+[Rr]eleases/
+[Dd]ebugPublic/
+x64/
+x86/
+build/
+bld/
+
+# General
+# Ignore OS specific files
+.DS_Store
+Thumbs.db
+
+# Visual Studio for Mac solution and project cache files
+*.suo
+*.userprefs
+
+# User specific files
+*.user
