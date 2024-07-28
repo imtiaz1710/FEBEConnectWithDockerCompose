@@ -8,6 +8,17 @@ namespace Farm2MarketProductService
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
+                    });
+            });
+
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -15,6 +26,9 @@ namespace Farm2MarketProductService
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
+
+
+            app.UseCors("AllowAllOrigins");
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
@@ -24,6 +38,7 @@ namespace Farm2MarketProductService
             }
 
             app.UseHttpsRedirection();
+
 
             app.UseAuthorization();
 
