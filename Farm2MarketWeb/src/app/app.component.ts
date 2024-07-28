@@ -14,7 +14,7 @@ import { RouterOutlet } from '@angular/router';
 export class AppComponent {
   data: [] = [];
   constructor(private http: HttpClient) {
-    http.get('http://localhost:8888/WeatherForecast').subscribe({
+    http.get('http://localhost:32001/WeatherForecast').subscribe({
       next: (res: any) => {
         this.data = res;
       }

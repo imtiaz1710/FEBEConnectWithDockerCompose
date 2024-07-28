@@ -1,0 +1,21 @@
+version: '3.4'
+
+services: 
+    frontend:
+        image: f2mweb
+        # build:
+        #     context: .
+        #     dockerfile: ./Farm2MarketWeb/Dockerfile
+        environment: 
+           - ProductEndpoint=http://backend:8080
+        ports:
+           - "32000:80"
+        depends_on: 
+           - backend
+    backend:
+        image: f2mproduct
+        # build: 
+        #     context: .
+        #     dockerfile: ./Farm2MarketProductService/Farm2MarketProductService/Dockerfile
+        ports: 
+           - "32001:8080"
